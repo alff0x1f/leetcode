@@ -19,7 +19,12 @@ func TestAddTwoNumbers(t *testing.T) {
 	var tests = []struct {
 		numA int
 		numB int
-	}{{342, 465}}
+	}{
+		{342, 465},
+		{0, 0},
+		{9999, 9999999},
+		{9999, 1},
+	}
 	for _, tst := range tests {
 		listA := numberToLinkedList(tst.numA)
 		listB := numberToLinkedList(tst.numB)
