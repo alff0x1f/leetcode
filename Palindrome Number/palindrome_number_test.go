@@ -1,4 +1,4 @@
-package leetcode
+package Palindrome_Number
 
 import (
 	"fmt"
@@ -37,6 +37,12 @@ func TestSplitIntToDigits(t *testing.T) {
 		if len(digits) != len(tst.output) {
 			digitsStr := fmt.Sprint(digits)
 			t.Errorf("error in %d (%s)", tst.input, digitsStr)
+		}
+		for i := range tst.output {
+			if tst.output[i] != digits[i] {
+				digitsStr := fmt.Sprint(digits)
+				t.Errorf("error in %d (%s)", tst.input, digitsStr)
+			}
 		}
 	}
 }

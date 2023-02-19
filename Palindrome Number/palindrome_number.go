@@ -1,4 +1,4 @@
-package leetcode
+package Palindrome_Number
 
 func isPalindrome(x int) bool {
 	if x < 0 {
@@ -27,5 +27,5 @@ func splitIntToDigits(x int) []int {
 	for idx := range reverseDigits {
 		digits[idx] = reverseDigits[countDigits-idx-1]
 	}
-	return reverseDigits
+	return digits
 }
