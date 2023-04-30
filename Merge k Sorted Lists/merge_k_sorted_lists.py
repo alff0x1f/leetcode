@@ -1,4 +1,5 @@
-from typing import List, Optional
+from typing import List, Optional, Tuple
+
 
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -7,7 +8,8 @@ class ListNode:
 
 
 class Solution:
-    def extractMin(self, lists) -> Optional[ListNode]:
+    @staticmethod
+    def extract_min(lists: list) -> Tuple[int, list]:
         min_value_pos = 0
         for i, node in enumerate(lists):
             if node.val < lists[min_value_pos].val:
@@ -23,11 +25,11 @@ class Solution:
         lists = [node for node in lists if node]
         if not lists:
             return None
-        min_value, lists = self.extractMin(lists)
+        min_value, lists = self.extract_min(lists)
         first_node = ListNode(min_value, None)
         current_node = first_node
         while lists:
-            min_value, lists = self.extractMin(lists)
+            min_value, lists = self.extract_min(lists)
             current_node.next = ListNode(min_value, None)
             current_node = current_node.next
         return first_node
