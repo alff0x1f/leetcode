@@ -1,0 +1,3 @@
+module Average_Salary_Excluding_the_Minimum_and_Maximum_Salary
+
+go 1.18
